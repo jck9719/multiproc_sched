@@ -35,13 +35,13 @@ int main ()
     
     prepare_matrix (&matrix, proc_num, task_num);
     zero_matrix (matrix, proc_num, task_num);
-    print_matrix (matrix, proc_num, task_num);
+    //print_matrix (matrix, proc_num, task_num);
     
     optimization (matrix, c_max, arr, task_num, proc_num);
     print_matrix (matrix, proc_num, task_num);
 
     create_script (matrix, filepath, proc_num, task_num);
-    // print_matrix (matrix, proc_num, task_num);
+    //print_matrix (matrix, proc_num, task_num);
     run_script (filepath);
 
     free_matrix (&matrix, proc_num);

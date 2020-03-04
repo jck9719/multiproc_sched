@@ -10,7 +10,7 @@ double count_divided_sum_t (int *arr, int arr_length, int proc_num)
         sum += arr[i];
     }
 
-    //fprintf (stdout, "Sum = %d\n", sum);
+    fprintf (stdout, "Sum  divided= %d\n", sum/proc_num);
 
     return (double) sum/proc_num; 
 }
@@ -132,7 +132,7 @@ void optimization (double **matrix, double c_max, int *arr, int task_num, int pr
             if(j >= task_num)
             {
                 fprintf (stdout, "\n");
-                exit (0);
+                break;
             }
 
         }
@@ -183,7 +183,7 @@ void create_script (double **matrix, char *filename, int rows, int columns)
         fprintf (handler, "\"Z%d\",", i + 1);
     }
     fprintf (handler, " \"location\", \"eastoutside\");\n");
-    fprintf (handler, "print -dpng output/optimize_diagram.png;");
+    fprintf (handler, "print -dpng output/optimize_diagram.png;\nopen output/optimize_diagram.png;");
     fclose (handler);
 }
 
@@ -193,7 +193,7 @@ void run_script (char *filename)
     char *feh = (char *) malloc (128 * sizeof (char));
 
     sprintf(cmd, "octave %s", filename);
-    sprintf(feh, "feh output/optimize_diagram.png");
+    //sprintf(feh, "feh output/optimize_diagram.png");
 
     system (cmd);
     system (feh);
