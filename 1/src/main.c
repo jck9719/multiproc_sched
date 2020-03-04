@@ -4,9 +4,8 @@
 
 
 /* TODO
-    better implementation of run_script () function,
-    should not waiting for closing feh
-    *using open in octave script directly effects with errors in valgrind
+    Should think about better implementation of
+    create_script () and run_script ()
 */
 
 int main ()
