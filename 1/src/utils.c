@@ -183,7 +183,7 @@ void create_script (double **matrix, char *filename, int rows, int columns)
         fprintf (handler, "\"Z%d\",", i + 1);
     }
     fprintf (handler, " \"location\", \"eastoutside\");\n");
-    fprintf (handler, "print -dpng output/optimize_diagram.png;\nopen output/optimize_diagram.png;");
+    fprintf (handler, "print -dpng output/optimize_diagram.png;\n");
     fclose (handler);
 }
 
@@ -193,7 +193,7 @@ void run_script (char *filename)
     char *feh = (char *) malloc (128 * sizeof (char));
 
     sprintf(cmd, "octave %s", filename);
-    //sprintf(feh, "feh output/optimize_diagram.png");
+    sprintf(feh, "feh output/optimize_diagram.png");
 
     system (cmd);
     system (feh);

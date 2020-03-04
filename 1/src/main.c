@@ -6,6 +6,7 @@
 /* TODO
     better implementation of run_script () function,
     should not waiting for closing feh
+    *using open in octave script directly effects with errors in valgrind
 */
 
 int main ()
@@ -35,13 +36,9 @@ int main ()
     
     prepare_matrix (&matrix, proc_num, task_num);
     zero_matrix (matrix, proc_num, task_num);
-    //print_matrix (matrix, proc_num, task_num);
-    
     optimization (matrix, c_max, arr, task_num, proc_num);
-    print_matrix (matrix, proc_num, task_num);
 
     create_script (matrix, filepath, proc_num, task_num);
-    //print_matrix (matrix, proc_num, task_num);
     run_script (filepath);
 
     free_matrix (&matrix, proc_num);
