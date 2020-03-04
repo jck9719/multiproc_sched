@@ -190,14 +190,14 @@ void create_script (double **matrix, char *filename, int rows, int columns)
 void run_script (char *filename)
 {
     char *cmd = (char *) malloc (128 * sizeof (char));
-    char *feh = (char *) malloc (128 * sizeof (char));
+    char *xdg = (char *) malloc (128 * sizeof (char));
 
     sprintf(cmd, "octave %s", filename);
-    sprintf(feh, "feh output/optimize_diagram.png");
+    sprintf(xdg, "xdg-open output/optimize_diagram.png");
 
     system (cmd);
-    system (feh);
+    system (xdg);
     
-    free (feh);
+    free (xdg);
     free (cmd);
 }
